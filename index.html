@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cash register</title>
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="app.js"></script>
+  <title>Cash register</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
+<main>
 
-    <main>
     <header>
-        <h1>Cashier Register!</h1>
-</header>
+        <h1 id="pgtitle">Cashier Register!</h1>
+        <h3>Please provide the product price and cash given</h3>
+    </header>
+
 
 <section class = "Money">
     <h1>Product Price!</h1>
     <form>
-        <input type="text" placeholder="PRODUCT AMMOUNT....." id="test" required="required">
-        <span class="message"></span>
+        <input type="number" id="price">
       </form>
 </section>
+
 <section class = "Money">
     <h1>Money Given!</h1>
-    <form>
-        <input type="text" placeholder="MONEY GIVEN......" id="test" required="required">
-        <span class="message"></span>
+    <form name="cashform" action="" method = "get">
+      <input type="number" id="cash" name="inputbox">
+      <button onclick="test(this.form)">Submit</button>
       </form>
 </section>
+
+
 <section class = "Money">
     <h1>Return Change!</h1>
     <form>
-        <input type="text" placeholder="Change Back......" id="test" required="required">
-        <span class="message"></span>
-      </form>
+        <p id="change"></p>
+    </form>
+</section>
+
+<section class="Money">
+  <h1>STATUS</h1>
+  <button onclick="checkstatus()">Check Status</button>
+  <div id="square"></div>
 </section>
 
 <table style="width:100%">
@@ -60,7 +71,7 @@
 
   
   <tr>
-    <td>QUATER</td>
+    <td>QUARTER</td>
     <td>0.25</td>
  
   </tr>
@@ -99,12 +110,10 @@
   </tr>
 </table>
 
-
-
 <footer>
-    <h2>Created by Team!</h2>
+    <h2>Created by Group 6!</h2>
 </footer>
-<p></p>
 </main>
+<script src="app.js"></script>
 </body>
 </html> 

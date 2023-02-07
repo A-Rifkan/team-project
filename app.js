@@ -1,5 +1,29 @@
-// YOUR CODE
-function cashRegister(price, cash, cid){
+let cid = [
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100]
+]
+let cash =0, price =0, change= ""
+function test(form){
+    price = document.getElementById("price").value;
+    cash = form.inputbox.value
+    change = document.querySelector("#change")
+    if ((cash-price) < 0 || (price-cash) < 0){
+        change.innerHTML = JSON.stringify(cashRegister())
+    }
+    else {
+        change.innerHTML = JSON.stringify(cashRegister()["change"])
+    }
+    event.preventDefault();
+}
+
+function cashRegister(){
     let status = {status: "0", change: []}, totalvalue = 0, change = cash - price, counter =8
     //This Array is for a loop to check through each type
     let moneytypes = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01]
@@ -63,7 +87,19 @@ function cashRegister(price, cash, cid){
         status["change"] = (Object.entries(newArr)).reverse();
         return status
     }
+    event.preventDefault();
 
 }
+
+function checkstatus(){
+    if (cashRegister()["status"]== "OPEN"){
+        document.getElementById("square").style.backgroundColor = "green";
+    }
+    else{
+        document.getElementById("square").style.backgroundColor = "red";
+    }
+    event.preventDefault();
+}
+
 
 
